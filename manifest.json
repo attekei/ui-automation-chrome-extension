@@ -1,8 +1,7 @@
 {
-  "name": "UI Automation",
-  "description": "UI Automation helps you to write automated UI tests.",
-  "version": "0.2.1",
-  "devtools_page": "code/html/devtools.html",
+  "name": "CSS Selector Picker",
+  "description": "Originally https://github.com/zalando/ui-automation-chrome-extension, modified for Metabase",
+  "version": "0.0.0",
   "manifest_version": 2,
   "icons": {
     "48": "icons/icon48.png",
@@ -10,8 +9,11 @@
   },
   "background": {
     "scripts": [
-      "code/js/background_script/background.js"
+      "background.js"
     ]
+  },
+  "page_action": {
+    "default_name": "Toggle CSS Selector Picker"
   },
   "content_scripts": [
     {
@@ -19,11 +21,9 @@
         "<all_urls>"
       ],
       "js": [
-        "code/js/lib/jquery.js",
-        "code/js/content_script/pageObjectBuilder.js",
-        "code/js/tools/CSSGenerator.js",
-        "code/js/tools/XPathGenerator.js",
-        "code/js/tools/JavaGenerator.js"
+        "clipboard.min.js",
+        "content-script.js",
+        "css-generator.js"
       ]
     }
   ]
